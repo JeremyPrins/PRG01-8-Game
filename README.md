@@ -21,6 +21,8 @@ Het klassendiagram van je game.
 
 Link naar de pull request die je in week 4 hebt gedaan. De link gaat naar een PR in een fork van het project van een medestudent.
 
+https://github.com/JeremyPrins/Eindopdracht-Game
+
 ## Peer review
 
 Link naar de peer review die je in week 6 hebt gedaan. De link gaat naar een issue in het project van een medestudent.
