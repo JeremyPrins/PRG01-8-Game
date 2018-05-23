@@ -1,16 +1,46 @@
-# Typescript startproject
+# PRG01-8-Game
+Repository voor het ontwikkelen van een game voor het vak PRG01-8
 
-Dit is een leeg startproject voor de oefeningen in CMTTHE01-4 en PRG01-8. 
+## Inleiding
 
-## Het project
+Toelichting van je spelconcept
 
-- De **docs** map bevat de client side:html en css. De js file wordt hier automatisch in gezet door de compiler.
-- De **dev** map bevat de typescript files.
-- **game.ts** is het startpunt van de app. Hierin staat de window listener die een `new Game()` maakt.
+## Speelbare game
 
-## Compileren
-- Druk op CMD+SHIFT+B en kies voor `watch mode`. Je `.ts` files worden nu samengevoegd in `main.js`.
-- tsconfig.json bevat instellingen voor het compileren.
+Link naar de online speelbare game
 
-## Bekijken
-Open index.html in `localhost`
+## Installatie
+
+Instructies voor het clonen, editen en runnen van de game via deze repository.
+
+## Klassendiagram
+
+Het klassendiagram van je game.
+
+## Pull request
+
+Link naar de pull request die je in week 4 hebt gedaan. De link gaat naar een PR in een fork van het project van een medestudent.
+
+## Peer review
+
+Link naar de peer review die je in week 6 hebt gedaan. De link gaat naar een issue in het project van een medestudent.
+
+## Singleton
+
+Beschrijf waar en waarom je de singleton hebt toegepast.
+
+## Polymorfisme
+
+Beschrijf van minimaal 2 plekken uit jouw code waar en waarom er gebruik is gemaakt van polymorfisme.
+
+## Strategy
+
+Beschrijf waar en waarom je het strategy pattern hebt toegepast.
+
+## Observer
+
+Beschrijf waar en waarom je het observer pattern hebt toegepast.
+
+## Gameplay componenten
+
+Beschrijf per component waar en waarom je het hebt toegepast
