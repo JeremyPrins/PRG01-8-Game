@@ -21,7 +21,10 @@ Het klassendiagram van je game.
 
 Link naar de pull request die je in week 4 hebt gedaan. De link gaat naar een PR in een fork van het project van een medestudent.
 
+Fork game Maarten Esser
 https://github.com/JeremyPrins/Eindopdracht-Game
+
+Ik heb bij deze commit de singleton en strategy patern toegevoegd. De singleton omdat de game instance maar een keer aangemaakt hoeft te worden en daarna niet meer. De strategy patern omdat er in de game meerdere soorten gedrag nodig zijn maar ze wel een aantal eigenschappen delen die overlap hebben.
 
 ## Peer review
 
