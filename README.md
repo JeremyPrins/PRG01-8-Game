@@ -28,7 +28,7 @@ Ik heb bij deze commit de singleton en strategy patern toegevoegd. De singleton 
 
 ## Peer review
 
-Lionk peer review: 
+Link peer review: 
 https://github.com/duncanteege/theminimalist/issues/3
 
 ## Singleton
