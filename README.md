@@ -28,7 +28,8 @@ Ik heb bij deze commit de singleton en strategy patern toegevoegd. De singleton 
 
 ## Peer review
 
-Link naar de peer review die je in week 6 hebt gedaan. De link gaat naar een issue in het project van een medestudent.
+Lionk peer review: 
+https://github.com/duncanteege/theminimalist/issues/3
 
 ## Singleton
 
