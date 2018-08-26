@@ -1,52 +1,75 @@
-# PRG01-8-Game
-Repository voor het ontwikkelen van een game voor het vak PRG01-8
+# PRG08 Week 4 oefening 1
 
-## Inleiding
+## Polymorphism
 
-Toelichting van je spelconcept
+Gebruik het type van de parent om verschillende typen children generiek te kunnen aanspreken. In dit voorbeeld erven `Health` en `Bomb` van `GameObject`. `GameObject` heeft een `update` method:
+```
+objects:GameObject[] = []
 
-## Speelbare game
+this.objects.push(new Health(), new Bomb())
 
-Link naar de online speelbare game
+for(let o of this.objects){
+    o.update()
+}
+```
 
-## Installatie
+### Type Guards
 
-Instructies voor het clonen, editen en runnen van de game via deze repository.
+Check welk type een object echt is. Alleen Car heeft een drive functie. Met `instanceof` kijken we of het object een Car is.
+```
+if(o instanceof Car) {
+    o.drive()
+}
+```
 
-## Klassendiagram
+## Opdracht
 
-Het klassendiagram van je game.
+- Maak een array in Game.ts waarin de UI, de Health en de Bomb instances geplaatst worden
+- De Car blijft wel een losse property, dit is nodig omdat we bij elk element willen kijken of het element de car raakt.
+- In de gameloop loop je door de gameobjects array heen. Daarbij roep je de `update` functie van UI, health en bomb aan.
+- Zorg met `instanceof` dat de checks voor collision blijven werken!
 
-## Pull request
+## Fire!
 
-Link naar de pull request die je in week 4 hebt gedaan. De link gaat naar een PR in een fork van het project van een medestudent.
+- Zodra een bom beneden uit beeld gaat, voeg je een `new Fire()` toe aan de gameobjects array. Deze instance moet op dezelfde x positie verschijnen als waar de bom uit beeld ging.
+- Als er 10 vuurtjes in beeld zijn is het game over!
 
-Fork game Maarten Esser
-https://github.com/JeremyPrins/Eindopdracht-Game
+## Health 
 
-Ik heb bij deze commit de singleton en strategy patern toegevoegd. De singleton omdat de game instance maar een keer aangemaakt hoeft te worden en daarna niet meer. De strategy patern omdat er in de game meerdere soorten gedrag nodig zijn maar ze wel een aantal eigenschappen delen die overlap hebben.
+- Als je collide met een health object, verwijder je alle Fire instances uit de gameobjects array. Let op dat de fire DIVS ook uit de DOM verwijderd moeten worden.
 
-## Peer review
+### Fire Element uit DOM verwijderen
 
-Link peer review: 
-https://github.com/duncanteege/theminimalist/issues/3
+```
+this.element.remove()
+```
 
-## Singleton
+### Object uit array verwijderen
 
-Beschrijf waar en waarom je de singleton hebt toegepast.
+Je kan het beste van achter naar voren door een array loopen, zodat je tijdens de loop het object meteen uit de array kan verwijderen:
+```
+for(let i = array.length; i>=0; i--){
+    let item = array[i]
 
-## Polymorfisme
+    // check wat voor item dit is
+    if(item...){
+        // verwijder dit item uit de array
+        array.splice(i,1)
+    }
+}
+```
 
-Beschrijf van minimaal 2 plekken uit jouw code waar en waarom er gebruik is gemaakt van polymorfisme.
+### Collision 
 
-## Strategy
+Gebruik de DOM rectangle om de positie en afmeting van een element te achterhalen. [MDN documentatie](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect)
 
-Beschrijf waar en waarom je het strategy pattern hebt toegepast.
+```
+let rectangle : ClientRect = divelement.getBoundingClientRect()
 
-## Observer
-
-Beschrijf waar en waarom je het observer pattern hebt toegepast.
-
-## Gameplay componenten
-
-Beschrijf per component waar en waarom je het hebt toegepast
+function checkCollision(a: ClientRect, b: ClientRect) {
+    return (a.left <= b.right &&
+          b.left <= a.right &&
+          a.top <= b.bottom &&
+          b.top <= a.bottom)
+}
+```
