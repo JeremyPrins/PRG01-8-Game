@@ -33,7 +33,31 @@ https://github.com/duncanteege/theminimalist/issues/3
 
 ## Singleton
 
-Beschrijf waar en waarom je de singleton hebt toegepast.
+Ik heb bij deze game de Singleton pattern gebruik in de game class.
+
+  ```
+    // Public 
+    public static instance: Game
+   ```
+   
+De method.
+
+  ```
+    // **Singleton Pattern**
+    public static getInstance() {
+        if (!Game.instance) {
+            Game.instance = new Game()
+        }
+        return Game.instance
+    }
+   ```
+   
+
+Die wordt hier uitgevoerd.
+```
+window.addEventListener("load", () => { Game.getInstance() })
+   ```
+
 
 ## Polymorfisme
 
