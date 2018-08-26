@@ -13,9 +13,9 @@ https://stud.hosted.hr.nl/0893306/game/docs/
 Om de game te installeren moet je de repo colonen en naar de docs map navigeren om het spel te spelen. Je moet natuurlijk ool de webserver opstarten. 
 
 ## Klassendiagram
+UML van de game
 
-UML van de game >
-
+https://stud.hosted.hr.nl/0893306/game/UML.png
 
 ## Pull request
 
