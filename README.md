@@ -1,21 +1,21 @@
-# PRG01-8-Game
-Repository voor het ontwikkelen van een game voor het vak PRG01-8
+# Space Boys
 
 ## Inleiding
 
-Toelichting van je spelconcept
+Het doel van de game is om te voorkomen dat de vijanden die van bovenaan het scherm naar beneden komen de onderkant van het scherm bereiken. De speler kan zijn score verhogen door vijanden te rammen vijanden scoren punten door de onderkant vvan het speelveld te bereiken. 
 
 ## Speelbare game
-
-Link naar de online speelbare game
+De game is hier te spelen.
+https://stud.hosted.hr.nl/0893306/game/docs/
 
 ## Installatie
 
-Instructies voor het clonen, editen en runnen van de game via deze repository.
+Om de game te installeren moet je de repo colonen en naar de docs map navigeren om het spel te spelen. Je moet natuurlijk ool de webserver opstarten. 
 
 ## Klassendiagram
 
-Het klassendiagram van je game.
+UML van de game >
+
 
 ## Pull request
 
