@@ -61,8 +61,21 @@ window.addEventListener("load", () => { Game.getInstance() })
 
 ## Polymorfisme
 
-Beschrijf van minimaal 2 plekken uit jouw code waar en waarom er gebruik is gemaakt van polymorfisme.
+In Space Boys wordt polymosrfisme vooral gebruikt in de class gameobject.
+Zo extenden de classes, enemy, expliosion, UI, PlayerSpeedUp en PlayerGrow de class gameobject. 
 
+```
+class Enemy extends GameObject implements Observer 
+
+class Explosion extends GameObject
+
+class UI extends GameObject 
+
+class PlayerGrow extends GameObject implements IMovementBehaviour
+
+class PlayerSpeedUp extends GameObject implements IMovementBehaviour
+
+   ```
 ## Strategy
 
 Beschrijf waar en waarom je het strategy pattern hebt toegepast.
