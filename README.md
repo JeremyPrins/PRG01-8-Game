@@ -129,7 +129,7 @@ Game subscribed de enemies hier
         }
 ```
 
-Met deze funtie
+Met deze functie
 ```
 
     //Subscribe function
@@ -160,6 +160,6 @@ De notify funtie laat de enemy zichzelf resetten na een botsing met de speler
 
 Ik heb twee gameplay componenten toegevoegd.
 
-De game is visueel aantrekkelijk en heeft een samenhangende uitstraaling.
+De game is visueel aantrekkelijk en heeft een samenhangende uitstraling.
 
 De game heeft geluiden 
