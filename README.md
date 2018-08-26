@@ -33,7 +33,7 @@ https://github.com/duncanteege/theminimalist/issues/3
 
 ## Singleton
 
-Ik heb bij deze game de Singleton pattern gebruik in de game class.
+Ik heb bij deze game de Singleton pattern gebruik in de game class
 
   ```
     // Public 
@@ -52,7 +52,6 @@ De method.
     }
    ```
    
-
 Die wordt hier uitgevoerd.
 ```
 window.addEventListener("load", () => { Game.getInstance() })
@@ -61,8 +60,8 @@ window.addEventListener("load", () => { Game.getInstance() })
 
 ## Polymorfisme
 
-In Space Boys wordt Polymosrfisme vooral gebruikt in de class gameobject.
-Zo extenden de classes, enemy, expliosion, UI, PlayerSpeedUp en PlayerGrow de class gameobject. 
+In Space Boys wordt Polymosrfisme vooral gebruikt in de class gameobject
+Zo extenden de classes, enemy, expliosion, UI, PlayerSpeedUp en PlayerGrow de class gameobject
 
 ```
 class Enemy extends GameObject implements Observer 
@@ -78,8 +77,8 @@ class PlayerSpeedUp extends GameObject implements IMovementBehaviour
    ```
 ## Strategy
 
-Ik heb de Strategy pattern toegapast bij de powerups in deze game.
-Beide powerups implementen de interface IpowerupBehaviour.
+Ik heb de Strategy pattern toegapast bij de powerups in deze game
+Beide powerups implementen de interface IpowerupBehaviour
 
 ```
 interface IMovementBehaviour {
@@ -88,28 +87,79 @@ interface IMovementBehaviour {
 }
    ```
    
-Het gedrag wordt geet in de Player class en is default null.
+Het gedrag wordt gezet in de Player class en is default null
+Als de player een powerup oppakt dan krijgt de speler het bijbehoordende gedrag
 ```
     public myMovementBehaviour: IMovementBehaviour | null
     
 ```
 ```
-
-        this.myMovementBehaviour = null
-        ```
-
-
+    this.myMovementBehaviour = null
+```
 ```
     public setMovementBehaviour(behaviour: IMovementBehaviour): void {
         behaviour.playerMoveBehaviour()
     }
-    
-    ```
+```
 
 ## Observer
 
-Beschrijf waar en waarom je het observer pattern hebt toegepast.
+De Observer class heb ik toegepast met als subject de game class en als observer de enemy class
+```
+interface Subject {
+    observers: Observer[]
+    subscribe(o: Observer): void
+    unsubscribe(o: Observer): void
+    notifySubscribers(): void
+}
+```
+```
+interface Observer {
+    notify(): void
+}
+```
+
+Game subscribed de enemies hier
+```
+        // Subscribe Enemy objects to game
+        for (let enemy of this.gameObjects) {
+            if (enemy instanceof Enemy) {
+                this.subscribe(enemy)
+            }
+        }
+```
+
+Met deze funtie
+```
+
+    //Subscribe function
+    public subscribe(enemy: Observer): void {
+        this.observers.push(enemy)
+    }
+```
+
+En notified ze hier
+```
+    public notifySubscribers(): void {
+        for (let o of this.observers) {
+            o.notify();
+        }
+    }
+```
+
+De notify funtie laat de enemy zichzelf resetten na een botsing met de speler
+```
+    public notify(): void {
+        console.log("enemy is notified of collision")
+        this.reset()
+    }
+```
+
 
 ## Gameplay componenten
 
-Beschrijf per component waar en waarom je het hebt toegepast
+Ik heb twee gameplay componenten toegevoegd.
+
+De game is visueel aantrekkelijk en heeft een samenhangende uitstraaling.
+
+De game heeft geluiden 
