@@ -61,7 +61,7 @@ window.addEventListener("load", () => { Game.getInstance() })
 
 ## Polymorfisme
 
-In Space Boys wordt polymosrfisme vooral gebruikt in de class gameobject.
+In Space Boys wordt Polymosrfisme vooral gebruikt in de class gameobject.
 Zo extenden de classes, enemy, expliosion, UI, PlayerSpeedUp en PlayerGrow de class gameobject. 
 
 ```
@@ -78,7 +78,33 @@ class PlayerSpeedUp extends GameObject implements IMovementBehaviour
    ```
 ## Strategy
 
-Beschrijf waar en waarom je het strategy pattern hebt toegepast.
+Ik heb de Strategy pattern toegapast bij de powerups in deze game.
+Beide powerups implementen de interface IpowerupBehaviour.
+
+```
+interface IMovementBehaviour {
+    player: Player;
+    playerMoveBehaviour(): void
+}
+   ```
+   
+Het gedrag wordt geet in de Player class en is default null.
+```
+    public myMovementBehaviour: IMovementBehaviour | null
+    
+```
+```
+
+        this.myMovementBehaviour = null
+        ```
+
+
+```
+    public setMovementBehaviour(behaviour: IMovementBehaviour): void {
+        behaviour.playerMoveBehaviour()
+    }
+    
+    ```
 
 ## Observer
 
